@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.11.18)  18 NOV 2024 10:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.11.18)  18 NOV 2024 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1072,12 +1072,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <andrew_gelman.png, id=68, 250.9375pt x 334.24875pt>
 File: andrew_gelman.png Graphic file (type png)
 <use andrew_gelman.png>
-Package pdftex.def Info: andrew_gelman.png  used on input line 65.
+Package pdftex.def Info: andrew_gelman.png  used on input line 64.
 (pdftex.def)             Requested size: 92.1879pt x 122.79286pt.
 <aki_vehtari.png, id=69, 280.79906pt x 260.47313pt>
 File: aki_vehtari.png Graphic file (type png)
 <use aki_vehtari.png>
-Package pdftex.def Info: aki_vehtari.png  used on input line 65.
+Package pdftex.def Info: aki_vehtari.png  used on input line 64.
 (pdftex.def)             Requested size: 92.1879pt x 85.51523pt.
 
 
@@ -1088,7 +1088,7 @@ Package pdftex.def Info: aki_vehtari.png  used on input line 65.
 File: bayesian_data_analysis_cover.png Graphic file (type png)
 <use bayesian_data_analysis_cover.png>
 Package pdftex.def Info: bayesian_data_analysis_cover.png  used on input line 9
-3.
+2.
 (pdftex.def)             Requested size: 107.55333pt x 138.30629pt.
 
 
@@ -1098,7 +1098,7 @@ Package pdftex.def Info: bayesian_data_analysis_cover.png  used on input line 9
 <statistical_modeling_blog.png, id=125, 1452.17531pt x 775.39688pt>
 File: statistical_modeling_blog.png Graphic file (type png)
 <use statistical_modeling_blog.png>
-Package pdftex.def Info: statistical_modeling_blog.png  used on input line 102.
+Package pdftex.def Info: statistical_modeling_blog.png  used on input line 101.
 
 (pdftex.def)             Requested size: 307.28987pt x 164.08046pt.
 
@@ -1133,7 +1133,7 @@ Package pdftex.def Info: statistical_modeling_blog.png  used on input line 102.
 <bootstrap_populations.png, id=307, 2055.68pt x 1048.91875pt>
 File: bootstrap_populations.png Graphic file (type png)
 <use bootstrap_populations.png>
-Package pdftex.def Info: bootstrap_populations.png  used on input line 236.
+Package pdftex.def Info: bootstrap_populations.png  used on input line 235.
 (pdftex.def)             Requested size: 215.10196pt x 109.74759pt.
 
 
@@ -1148,14 +1148,30 @@ Package pdftex.def Info: bootstrap_populations.png  used on input line 236.
 [14
 
 ]
+<neural_network.png, id=388, 426.59375pt x 269.005pt>
+File: neural_network.png Graphic file (type png)
+<use neural_network.png>
+Package pdftex.def Info: neural_network.png  used on input line 321.
+(pdftex.def)             Requested size: 153.64493pt x 96.88687pt.
+
 
 [15
 
-]
+ <./neural_network.png>]
+<meta_analysis.png, id=417, 625.33624pt x 329.23pt>
+File: meta_analysis.png Graphic file (type png)
+<use meta_analysis.png>
+Package pdftex.def Info: meta_analysis.png  used on input line 340.
+(pdftex.def)             Requested size: 245.83282pt x 129.424pt.
+
+Overfull \vbox (9.18007pt too high) detected at line 340
+ []
+
+
 
 [16
 
-]
+ <./meta_analysis.png>]
 
 [17
 
@@ -1164,34 +1180,14 @@ Package pdftex.def Info: bootstrap_populations.png  used on input line 236.
 [18
 
 ]
-<bubble-chart.png, id=488, 844.15375pt x 663.47874pt>
-File: bubble-chart.png Graphic file (type png)
-<use bubble-chart.png>
-Package pdftex.def Info: bubble-chart.png  used on input line 342.
-(pdftex.def)             Requested size: 307.28987pt x 241.52486pt.
-
-Overfull \vbox (53.78093pt too high) detected at line 342
- []
-
-
 
 [19
 
- <./bubble-chart.png (PNG copy)>]
-<nyc-open-data.png, id=515, 1204.5pt x 634.37pt>
-File: nyc-open-data.png Graphic file (type png)
-<use nyc-open-data.png>
-Package pdftex.def Info: nyc-open-data.png  used on input line 358.
-(pdftex.def)             Requested size: 276.559pt x 145.65034pt.
-
+]
 
 [20
 
- <./nyc-open-data.png>]
-Overfull \vbox (104.15616pt too high) detected at line 384
- []
-
-
+]
 
 [21
 
@@ -1200,14 +1196,52 @@ Overfull \vbox (104.15616pt too high) detected at line 384
 [22
 
 ]
-Overfull \hbox (17.04195pt too wide) in paragraph at lines 405--405
-\OT1/cmtt/m/n/10.95 exploring-[]nyc-[]open-[]data-[]with-[]3d-[]hexbins-[]5af2b
-7d8bc46$[]  
+
+[23
+
+]
+<bubble-chart.png, id=620, 844.15375pt x 663.47874pt>
+File: bubble-chart.png Graphic file (type png)
+<use bubble-chart.png>
+Package pdftex.def Info: bubble-chart.png  used on input line 479.
+(pdftex.def)             Requested size: 276.559pt x 217.36934pt.
+
+Overfull \vbox (29.62541pt too high) detected at line 479
  []
 
 
 
-[23
+[24
+
+ <./bubble-chart.png (PNG copy)>]
+<nyc-open-data.png, id=646, 1204.5pt x 634.37pt>
+File: nyc-open-data.png Graphic file (type png)
+<use nyc-open-data.png>
+Package pdftex.def Info: nyc-open-data.png  used on input line 495.
+(pdftex.def)             Requested size: 276.559pt x 145.65034pt.
+
+
+[25
+
+ <./nyc-open-data.png>]
+
+[26
+
+]
+Overfull \vbox (104.15616pt too high) detected at line 537
+ []
+
+
+
+[27
+
+]
+
+[28
+
+]
+
+[29
 
 ]
 \tf@nav=\write6
@@ -1228,32 +1262,37 @@ Package rerunfilecheck Info: File `seminarpresentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24599 strings out of 473682
- 492057 string characters out of 5716309
+ 24640 strings out of 473682
+ 492642 string characters out of 5716309
  849430 words of memory out of 5000000
- 47163 multiletter control sequences out of 15000+600000
- 571489 words of font info for 86 fonts, out of 8000000 for 9000
+ 47191 multiletter control sequences out of 15000+600000
+ 571783 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,14n,107p,396b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/ins
-tall/fonts/type1/public/amsfonts/cm/cmss10.pfb></Library/Application Support/Mi
-KTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmss12.pfb></Library/Applica
-tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmss8.pfb></L
-ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm
-/cmss9.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publ
-ic/amsfonts/cm/cmssbx10.pfb></Library/Application Support/MiKTeX/texmfs/install
-/fonts/type1/public/amsfonts/cm/cmssi10.pfb></Library/Application Support/MiKTe
-X/texmfs/install/fonts/type1/public/amsfonts/cm/cmssi8.pfb></Library/Applicatio
-n Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmssi9.pfb></Lib
-rary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publi
-c/amsfonts/cm/cmtt10.pfb></Library/Application Support/MiKTeX/texmfs/install/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on seminarpresentation.pdf (23 pages, 5293813 bytes).
+ts/cm/cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb></Library/Application Support/MiKTeX/texmfs/inst
+all/fonts/type1/public/amsfonts/cm/cmss10.pfb></Library/Application Support/MiK
+TeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmss12.pfb></Library/Applicat
+ion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmss8.pfb></Li
+brary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmss9.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publi
+c/amsfonts/cm/cmssbx10.pfb></Library/Application Support/MiKTeX/texmfs/install/
+fonts/type1/public/amsfonts/cm/cmssi10.pfb></Library/Application Support/MiKTeX
+/texmfs/install/fonts/type1/public/amsfonts/cm/cmssi8.pfb></Library/Application
+ Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmssi9.pfb></Libr
+ary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb></Library/Application Support/MiKTeX/texmfs/install/font
+s/type1/public/amsfonts/cm/cmsy8.pfb></Library/Application Support/MiKTeX/texmf
+s/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Library/Application Suppo
+rt/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb></Library/App
+lication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam
+10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/a
+msfonts/symbols/msam7.pfb>
+Output written on seminarpresentation.pdf (29 pages, 6513985 bytes).
 PDF statistics:
- 688 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

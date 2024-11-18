@@ -3,8 +3,8 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{hyperref}
-\usepackage{tikz} % For creating diagrams
-\usepackage{booktabs} % For better tables
+\usepackage{tikz}
+\usepackage{booktabs} 
 
 % Title page
 \title{What are the Most Important Statistical Ideas of the Past 50 Years?\\
@@ -30,7 +30,7 @@
 % Slide 2: Authors' Background
 \begin{frame}{Authors' Background}
 \begin{minipage}{0.3\textwidth}
-    \includegraphics[width=\textwidth]{andrew_gelman.png} % Replace with Andrew Gelman's image file
+    \includegraphics[width=\textwidth]{andrew_gelman.png} 
     \centering
     \small Andrew Gelman
 \end{minipage}
@@ -48,8 +48,7 @@
 \vspace{1em}
 
 \begin{minipage}{0.3\textwidth}
-    \includegraphics[width=\textwidth]{aki_vehtari.png} % Replace with Aki Vehtari's image file
-    \centering
+    \includegraphics[width=\textwidth]{aki_vehtari.png} 
     \small Aki Vehtari
 \end{minipage}
 \hfill
@@ -66,15 +65,15 @@
 
 % Slide: Bayesian Data Analysis and the Authors' Authority
 \begin{frame}{Authors' Background (cont.)}
-\vspace{0.5em} % Adds space below the title to prevent overlap
+\vspace{0.5em} 
 \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=\textwidth]{bayesian_data_analysis_cover.png} % Replace with the book cover image file
+    \includegraphics[width=\textwidth]{bayesian_data_analysis_cover.png}
     \centering
     \small \textit{Bayesian Data Analysis}
 \end{minipage}
 \hfill
 \begin{minipage}{0.6\textwidth}
-    \small % Reduces font size for better fit
+    \small 
     \begin{itemize}
         \item \textbf{The Book: Bayesian Data Analysis}
         \begin{itemize}
@@ -82,7 +81,7 @@
             \item Widely regarded as the foundational text ("the bible") for Bayesian practitioners.
             \item Covers theory, computation, and applied Bayesian methods.
         \end{itemize}
-        \vspace{0.5em} % Adds vertical spacing between sections
+        \vspace{0.5em} 
         \item \textbf{Their Authority on the Topic}
         \begin{itemize}
             \item Through this book, Gelman and Vehtari have shaped the modern understanding of Bayesian statistics.
@@ -97,7 +96,7 @@
 % Slide: Statistical Modeling Blog
 \begin{frame}{Gelman's Blog}
 \begin{center}
-    \includegraphics[width=\textwidth]{statistical_modeling_blog.png} % Replace with the actual file name and path
+    \includegraphics[width=\textwidth]{statistical_modeling_blog.png}
 \end{center}
 \end{frame}
 
@@ -220,7 +219,7 @@
 \end{frame}
 
 % Slide: Bootstrapping and Simulation-Based Inference (cont.)
-\begin{frame}{Bootstrapping and Simulation-Based Inference (cont.)}
+\begin{frame}{02: Bootstrapping and Simulation-Based Inference (cont.)}
 \begin{itemize}
     \item \textbf{The Bootstrap Algorithm:}
     \begin{center}
@@ -237,14 +236,17 @@
 
 
 % Slide: Simulation-Based Inference
-\begin{frame}{Simulation-Based Inference}
+\begin{frame}{Simulation-Based Inference (cont.)}
 \begin{itemize}
     \item \textbf{Example using Bayes' Rule:}
     \[
     P(\theta \mid X) = \frac{P(X \mid \theta) \colorbox{blue!20}{$P(\theta)$}}{P(X)}
     \]
+
     \item \textbf{Bayesian Approach:}
-    \item Conduct \textbf{prior predictive checks:}
+    \begin{itemize}
+        \item Bayesian encodes knowledge in the form of prior distributions.
+        \item Conduct \textbf{prior predictive checks:}
         \[
         P(\Theta) \to \Theta \to X
         \]
@@ -255,6 +257,7 @@
         \]
         Evaluates how well the posterior distribution predicts new or observed data points.
     \end{itemize}
+
     \item \textbf{Rise of Computational Power:}
     \begin{itemize}
         \item Advances in computational power have made simulations easier and more widely applicable.
@@ -265,78 +268,205 @@
 
 
 
-% Slide 6: Overparameterized Models and Regularization
+% Slide: Overparameterized Models and Regularization
 \begin{frame}{03: Overparameterized Models and Regularization}
 \begin{itemize}
-    \item High-dimensional models with more parameters than data points.
-    \item Regularization prevents overfitting by adding penalties to the model:
+    \item Adding parameters to a model allows for more flexibility and complexity:
+    
+    \textbf{Model 1: Simple Linear Regression} \\
     \[
-    \text{LASSO: } \min \left( ||Y - X\beta||^2 + \lambda ||\beta||_1 \right)
+    Y_i = \beta_0 + \beta_1 X_i + \epsilon_i
     \]
-\end{itemize}
-
-Lasso regularization, also known as L1 regularization, is a regression analysis technique that uses a penalty term to improve the accuracy and interpretability of statistical models.
-
-\begin{itemize}
-    \item \textbf{How it works:}
+    \vspace{-1em}
     \begin{itemize}
-        \item Lasso adds a penalty term to the residual sum of squares (RSS) and multiplies it by a regularization parameter, lambda (\(\lambda\)).
-        \item This penalty term constrains the size of the estimated coefficients, encouraging sparsity in the model.
+        \item Explains the relationship between an outcome (\(Y\)) and a predictor (\(X\)).
+        \item Limitation: Cannot account for time-varying effects or individual differences.
+    \end{itemize}
+
+    \textbf{Model 2: Incorporating More Parameters} \\
+    \[
+    Y_i = \beta_0 + \beta_1 X_i + \beta_2 \text{time} + \beta_3 (X_i \cdot \text{time}) + \epsilon_i
+    \]
+    \vspace{-1em}
+    \begin{itemize}
+        \item Adds parameters for time and its interaction with treatment, increasing flexibility.
+        \item Still assumes uniform responses across individuals.
     \end{itemize}
 \end{itemize}
-
-\begin{block}{Example}
-Neural networks with regularization techniques balance flexibility and robustness.
-\end{block}
 \end{frame}
 
-% Slide 7: Bayesian Multilevel Models
+% Slide: Overparameterized Models and Regularization (cont.)
+\begin{frame}{03: Overparameterized Models and Regularization (cont.)}
+\scriptsize
+\textbf{Model 3: Mixed Effects Model (More Parameters, More Flexibility)}
+\[
+Y_i = \beta_0 + b_{0i} + \beta_1 X_i + b_{1i} X_i + \beta_2 \text{time} + \beta_3 (X_i \cdot \text{time}) + \epsilon_i
+\]
+\vspace{-1em}
+\begin{itemize}
+    \item Includes subject-specific random effects (\(b_{0i}, b_{1i}\)), allowing for individual-level flexibility, increases model complexity.
+\end{itemize}
+
+
+\textbf{Example: Neural Networks}
+\begin{itemize}
+    \item Overparameterized models take these models to the extreme, with hundreds or thousands of parameters.
+    \item In neural networks, each edge in the network is associated with a parameter or weight. By making these networks very large, they can approximate a wide variety of functions (\textbf{Universal Approximation Theorem}).
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{neural_network.png}
+\end{center}
+
+\end{frame}
+
+
+
+% Slide 7: Multilevel Models (Part 1)
 \begin{frame}{04: Bayesian Multilevel Models}
 \begin{itemize}
-    \item Models hierarchical data with varying parameters at different levels.
+    \item Multilevel (or hierarchical) models assume a structure over parameters.
+    \item These models allow for varying effects at different levels of hierarchy:
+    \begin{itemize}
+        \item \textbf{First-level units:} Generate treatment effects.
+        \item \textbf{Second-level units:} Generate observed data and can vary depending on the research question.
+    \end{itemize}
     \item Example: Aggregating data across different groups in meta-analysis.
 \end{itemize}
 
-\[
-y_{ij} = \beta_0 + \beta_1 X_{ij} + u_j + \epsilon_{ij}
-\]
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{meta_analysis.png}
+\end{center}
+\end{frame}
+
+% Slide 8: Multilevel Models (Part 2)
+\begin{frame}{04: Bayesian Multilevel Models (cont.)}
 \begin{itemize}
-    \item \( u_j \): Random effect for group \( j \).
-    \item \( \epsilon_{ij} \): Error term for observation \( i \) in group \( j \).
+    \item The structure of the multilevel model can be expressed as:
+    \[
+    y_{ij} = \beta_0 + \beta_1 X_{ij} + u_j + \epsilon_{ij}
+    \]
+    \item Definitions:
+    \begin{itemize}
+        \item \( u_j \): Random effect for group \( j \).
+        \item \( \epsilon_{ij} \): Error term for observation \( i \) in group \( j \).
+    \end{itemize}
 \end{itemize}
 
 \begin{block}{Advantage}
-Combines individual-level and group-level variability for improved estimates.
+\begin{itemize}
+\item Combines individual-level and group-level variability for improved estimates.
+\item The Bayesian framework offers more flexibility in the modeling approach, as the choice of prior distributions plays a major role in capturing uncertainties and incorporating domain knowledge.
+\end{itemize}
 \end{block}
 \end{frame}
 
-% Slide 8: Generic Computation Algorithms
+
+
+% Slide 1: Generic Computation Algorithms
 \begin{frame}{05: Generic Computation Algorithms}
 \begin{itemize}
-    \item Advances in algorithms like MCMC, EM, and variational inference.
-    \item Enabled complex models and large-scale Bayesian analysis.
+    \item \textbf{Importance of Computers in Statistics:}
+    \begin{itemize}
+        \item Advances in computational power have been crucial for enabling and implementing complex statistical models.
+        \item Algorithms like EM and Metropolis-Hastings make it possible to analyze data that would otherwise be computationally infeasible.
+    \end{itemize}
 \end{itemize}
 \end{frame}
+
+% Slide 2: The Expectation-Maximization (EM) Model
+\begin{frame}{The Expectation-Maximization (EM) Model}
+\begin{itemize}
+    \item \textbf{Purpose:} Solves estimation problems when data is incomplete or latent.
+    \item \textbf{Process:} Uses available data to construct educated guesses for parameter values in a model (\(\hat{\theta} \to \theta\)).
+    \item \textbf{Example:} Mixture models with latent classes, where group labels are unknown. The EM algorithm estimates parameters even without direct class information.
+\end{itemize}
+\end{frame}
+
+% Slide 3: Metropolis-Hastings (M-H)
+\begin{frame}{Metropolis-Hastings (M-H)}
+\begin{itemize}
+    \item \textbf{Purpose:} Allows sampling from complex distributions that are difficult to handle mathematically.
+    \item \textbf{Bayesian Context:}
+    \begin{itemize}
+        \item In Bayes' rule, the posterior distribution \( P(\theta \mid X) \) can be so complicated that we cannot derive a closed-form formula for it.
+        \item M-H generates data samples directly from this posterior, enabling us to:
+        \begin{itemize}
+            \item Recover key quantities like means, quantiles, and credible intervals.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Importance:} Demonstrates the power of computation in Bayesian statistics, as it bypasses analytical challenges.
+\end{itemize}
+\end{frame}
+
 
 % Slide 9: Adaptive Decision Analysis
 \begin{frame}{06: Adaptive Decision Analysis}
 \begin{itemize}
-    \item Framework for making decisions during experiments.
-    \item Application: Stopping clinical trials early for ethical reasons.
+    \item \textbf{Framework for Decision-Making:}
+    \begin{itemize}
+        \item Interim decision points: Collect and analyze data before the experiment concludes.
+    \end{itemize}
+    \item \textbf{Application:} Stopping clinical stem cell trials early:
+    \begin{itemize}
+        \item If evidence suggests treatment is futile, the trial can be stopped early.
+        \item If treatment shows early promise, the trial may also be stopped to proceed with broader application.
+        \item A well-designed trial allows us to control the consequences of our decision, such as type I error.
+    \end{itemize}
+    \item \textbf{Frequentist Considerations:}
+    \begin{itemize}
+        \item Stopping early may hurt power and complicate the interpretation of the \( p \)-value.
+    \end{itemize}
 \end{itemize}
 \end{frame}
+
 
 % Slide 10: Robust Inference
 \begin{frame}{07: Robust Inference}
 \begin{itemize}
-    \item Focuses on reliability under model misspecification.
-    \item Example: Median-based estimators and propensity score matching.
+    \item Statisticians often make assumptions about their models. When assumptions are reasonable, results can generally be presumed trustworthy.
+    \item \textbf{However, assumptions are not always right.}
+    \item \textbf{Definition:} Robust statistics provide trustworthy analyses even when some assumptions are incorrect.
 \end{itemize}
+
+\begin{block}{Example: Outliers}
+\begin{itemize}
+    \item Outliers violate assumptions about the distribution of data (e.g., normality).
+    \item Median-based estimators are less sensitive to outliers compared to mean-based estimators.
+\end{itemize}
+\end{block}
 
 \begin{block}{Key Insight}
 Robust inference allows valid results even when data deviates from assumptions.
 \end{block}
 \end{frame}
+
+% Slide 11: Propensity Score Matching
+\begin{frame}{Propensity Score Matching}
+\begin{itemize}
+    \item \textbf{Definition:} A method to match people in a treatment group to people in a control group who are very similar to them.
+    \item Propensity Score Matching requires two models:
+    \begin{itemize}
+        \item \textbf{Model 1: Exposure-Outcome Model}
+        \[
+        Y_i = \beta_0 + \beta_1 T_i + E_i
+        \]
+        Estimates the effect of the treatment (\(T_i\)) on the outcome (\(Y_i\)).
+        \item \textbf{Model 2: Propensity Score Model}
+        \[
+        E_i = \tau_0 + \tau_1 C_i
+        \]
+        Matches individuals based on their covariates (\(C_i\)).
+    \end{itemize}
+    \item Both models must ideally be correctly specified; however:
+    \begin{itemize}
+        \item Correct specification is rarely achieved in practice.
+        \item Robust versions of Propensity Score Matching allow one model to be misspecified.
+    \end{itemize}
+    \item \textbf{Key Point:} The fewer assumptions we make, the better. Robust methods provide more reliable causal effect estimates.
+\end{itemize}
+\end{frame}
+
 
 % Slide 11: Exploratory Data Analysis (EDA)
 \begin{frame}{08: Exploratory Data Analysis (EDA)}
@@ -345,7 +475,7 @@ Robust inference allows valid results even when data deviates from assumptions.
     \item Useful in understanding the relation between data, fitted model, and predictions.
 \end{itemize}
 
-\includegraphics[width=\textwidth]{bubble-chart.png} % Add your visualization here.
+\includegraphics[width=0.9\textwidth]{bubble-chart.png}
 \end{frame}
 
 % Slide 12: Connection to NYC Open Data
@@ -360,9 +490,25 @@ Robust inference allows valid results even when data deviates from assumptions.
 \end{center}
 
 \begin{center}
-    \small \url{https://labs.mapbox.com/bites/00304/} % Adds the live URL below the image
+    \small \url{https://labs.mapbox.com/bites/00304/}
 \end{center}
 \end{frame}
+
+% Slide: What does it mean for an idea to be important?
+\begin{frame}{What does it mean for an idea to be important?}
+\begin{itemize}
+    \item Gelman emphasized avoiding citation counts of papers where concepts originated.
+    \item Instead, he assessed principles that influenced the development of ideas in modern statistical practice.
+    \item Example from the literature: The paper "The Importance of Being Clustered" (Anderluci et al., 2019) analyzed trends in statistics from 1970–2015 using clustering techniques to identify influential statistical ideas and themes.
+\item \textcolor{red}{\textbf{My Remarks:}}
+    \begin{itemize}
+        \item \textcolor{red}{Many of these ideas seem to have arisen from the analysis of very large datasets and the challenges inherent in combining sets of data.}
+        \item \textcolor{red}{The availability of computational power has also increased the tendency to model these statistical problems, pushing forward the development of modern methods.}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
 
 
 % Slide 14: The Importance of Human Oversight in Statistical Innovations
@@ -379,7 +525,7 @@ Robust inference allows valid results even when data deviates from assumptions.
 \end{itemize}
 
 \begin{block}{Reflection from Gelman}
-\textit{"On one hand, you have all these amazing things that machine learning can do, like self-driving cars, but you'll need a statistician to tell you if the number of people being killed by the self-driving cars is statistically significant."} – Paraphrased from Andrew Gelman
+\textit{"On one hand, you have all these amazing things that machine learning can do, like self-driving cars, but you'll need a statistician to tell you if the number of people being killed by the self-driving cars is statistically significant."} – Paraphrased from Andrew Gelman in a separate interview
 \end{block}
 
 \begin{block}{Looking Ahead}
@@ -401,15 +547,27 @@ Robust inference allows valid results even when data deviates from assumptions.
 
 % Slide 15: References
 \begin{frame}{References}
+\tiny
 \begin{itemize}
     \item Gelman, Andrew, and Aki Vehtari. 2021. "What are the Most Important Statistical Ideas of the Past 50 Years?" 
-    \textit{Journal of the American Statistical Association} 116, no. 536: 2087–2097.
+    \textit{Journal of the American Statistical Association}, 116(536): 2087–2097.
     \item Gelman, Andrew. \textit{Statistical Modeling, Causal Inference, and Social Science}. Accessed at: \url{https://statmodeling.stat.columbia.edu/}
     \item Gelman, Andrew. \textit{What are the most important statistical ideas of the past 50 years?} YouTube video. Available at: \url{https://www.youtube.com/watch?v=M6ha2UeSZbo}
     \item Gelman, Andrew. Additional commentary on statistical ideas. YouTube video. Available at: \url{https://youtu.be/nCyGhqQWj2g?si=GM9KpuWtg4tGV8je}
     \item Mapbox. 2018. "Exploring NYC Open Data with 3D Hexbins." Available at: \url{https://blog.mapbox.com/exploring-nyc-open-data-with-3d-hexbins-5af2b7d8bc46}
 \end{itemize}
+
+\footnotesize
+Images:
+\begin{itemize}
+    \item bootstrap\_populations.png
+    \item neural\_networks.png
+    \item meta\_analysis.png
+    \item propensity\_score\_matching.png
+    \item bubble-chart.png
+\end{itemize}
 \end{frame}
+
 
 
 \end{document}
