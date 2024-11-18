@@ -107,10 +107,84 @@
 \begin{itemize}
     \item Timeframe: 1970 to 2021, focusing on the development of modern statistics.
     \item 8 statistical ideas selected based on their influence on statistical theory, computation, and applications.
-    \item Designed as an \textbf{essay}, not a research manuscript.
+    \item Published to the \textit{Journal of the American Statistical Association} as an \textbf{essay}, not a research manuscript.
             \item Acknowledges that no definitive list can encompass all significant ideas.
 \end{itemize}
 \end{frame}
+
+% Slide: Key Statistical Concepts
+\begin{frame}{Key Statistical Concepts}
+\textbf{The 8 Statistical Ideas Covered in the Paper:}
+\begin{enumerate}
+    \item Counterfactual Causal Inference
+    \item Bootstrapping and Simulation-Based Inference
+    \item Overparameterized Models and Regularization
+    \item Bayesian Multilevel Models
+    \item Generic Computation Algorithms
+    \item Adaptive Decision Analysis
+    \item Robust Inference
+    \item Exploratory Data Analysis (EDA)
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Purpose:} These concepts reflect significant innovations in statistical theory, computation, and application from the last 50 years.
+\end{frame}
+
+
+% Slide: Intro to Counterfactual Causal Interference
+\begin{frame}{The Challenge of Observational Data}
+\begin{itemize}
+    \item \textbf{In an ideal world: Experimental Data}
+    \begin{itemize}
+        \item Researchers control interventions.
+        \item Participants are assigned to "treatment" and "control" groups.
+        \item Enables \textit{causal claims} about the effect of an intervention.
+    \end{itemize}
+    \item \textbf{In the real world: Observational Data}
+    \begin{itemize}
+        \item Researchers cannot control who receives the intervention.
+        \item Only allows for \textit{correlational claims}.
+        \item Several fields of study are prone to having more observational data i.e. statistics, econometrics, psychometrics, epidemiology, and computer science.
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.5cm}
+
+\textbf{Challenge:} How can we infer causality in the absence of experimental data?
+\end{frame}
+
+% Slide: Introducing Counterfactuals
+\begin{frame}{Introducing Counterfactuals}
+\begin{itemize}
+    \item \textbf{Model Setup:}
+    \begin{itemize}
+        \item Let \(X\) represent attending class:
+        \begin{itemize}
+            \item \(x = 0\): Did not attend class.
+            \item \(x = 1\): Did attend class.
+        \end{itemize}
+        \item In reality, I choose to attend class and receive a score \(Y_1\) on my paper.
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    
+    \item \textbf{Key Question:} Did attending class improve my score?
+    \begin{itemize}
+        \item To answer this, we need to consider an alternative reality:
+        \item What score (\(Y_0\)) would I have received if I \textit{did not} attend class?
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.5cm}
+
+\textbf{Key Idea: Counterfactuals}
+\begin{itemize}
+    \item \(Y_0\): The score in the unobserved reality (if I did not attend class).
+    \item This unobserved reality is called the \textit{counterfactual}.
+\end{itemize}
+\end{frame}
+
 
 % Slide 4: Counterfactual Causal Inference
 \begin{frame}{01: Counterfactual Causal Inference}
@@ -145,6 +219,52 @@
 \end{exampleblock}
 \end{frame}
 
+% Slide: Bootstrapping and Simulation-Based Inference (cont.)
+\begin{frame}{Bootstrapping and Simulation-Based Inference (cont.)}
+\begin{itemize}
+    \item \textbf{The Bootstrap Algorithm:}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{bootstrap_populations.png}
+    \end{center}
+    \item \( \hat{F}(t) \) Goal: Estimate the CDF of some statistic.
+    \item \textbf{Intuition:} Data sampled from the original dataset resembles a new dataset.
+    \item For each bootstrap dataset, calculate a statistic of interest and derive its distribution:
+    \[
+    t^{(1)}, t^{(2)}, t^{(3)} \to \hat{F}(t)
+    \]
+\end{itemize}
+\end{frame}
+
+
+% Slide: Simulation-Based Inference
+\begin{frame}{Simulation-Based Inference}
+\begin{itemize}
+    \item \textbf{Example using Bayes' Rule:}
+    \[
+    P(\theta \mid X) = \frac{P(X \mid \theta) \colorbox{blue!20}{$P(\theta)$}}{P(X)}
+    \]
+    \item \textbf{Bayesian Approach:}
+    \item Conduct \textbf{prior predictive checks:}
+        \[
+        P(\Theta) \to \Theta \to X
+        \]
+        Checks if the data generated from the prior distribution aligns with realistic or expected values.
+        \item Conduct \textbf{posterior predictive checks:}
+        \[
+        P(\Theta \mid X) \to \Theta \to X^*
+        \]
+        Evaluates how well the posterior distribution predicts new or observed data points.
+    \end{itemize}
+    \item \textbf{Rise of Computational Power:}
+    \begin{itemize}
+        \item Advances in computational power have made simulations easier and more widely applicable.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
 % Slide 6: Overparameterized Models and Regularization
 \begin{frame}{03: Overparameterized Models and Regularization}
 \begin{itemize}
@@ -153,6 +273,16 @@
     \[
     \text{LASSO: } \min \left( ||Y - X\beta||^2 + \lambda ||\beta||_1 \right)
     \]
+\end{itemize}
+
+Lasso regularization, also known as L1 regularization, is a regression analysis technique that uses a penalty term to improve the accuracy and interpretability of statistical models.
+
+\begin{itemize}
+    \item \textbf{How it works:}
+    \begin{itemize}
+        \item Lasso adds a penalty term to the residual sum of squares (RSS) and multiplies it by a regularization parameter, lambda (\(\lambda\)).
+        \item This penalty term constrains the size of the estimated coefficients, encouraging sparsity in the model.
+    \end{itemize}
 \end{itemize}
 
 \begin{block}{Example}
