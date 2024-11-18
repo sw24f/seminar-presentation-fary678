@@ -1,0 +1,203 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tikz} % For creating diagrams
+\usepackage{booktabs} % For better tables
+
+% Title page
+\title{What are the Most Important Statistical Ideas of the Past 50 Years?}
+\author{Faryal Fodderwala}
+\date{\today}
+
+\begin{document}
+
+% Title Slide
+\frame{\titlepage}
+
+% Slide 1: Introduction
+\begin{frame}{Introduction}
+\begin{itemize}
+    \item Overview of 8 significant statistical ideas from 1970 to 2021.
+    \item Authors: Andrew Gelman and Aki Vehtari.
+    \item Purpose: To provoke thought and discussion about modern statistical innovations and their impact on data science.
+\end{itemize}
+\end{frame}
+
+% Slide 2: Authors' Background
+\begin{frame}{Authors' Background}
+\begin{itemize}
+    \item \textbf{Andrew Gelman}:
+        \begin{itemize}
+            \item Professor of Statistics and Political Science, Columbia University.
+            \item Renowned for Bayesian statistics and multilevel modeling.
+        \end{itemize}
+    \item \textbf{Aki Vehtari}:
+        \begin{itemize}
+            \item Professor of Computational Probabilistic Modeling, Aalto University.
+            \item Focused on Bayesian computation and model assessment.
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+% Slide 3: Overview of the Paper
+\begin{frame}{Overview of the Paper}
+\begin{itemize}
+    \item Timeframe: 1970 to 2021, focusing on the development of modern statistics.
+    \item 8 statistical ideas selected based on their influence on statistical theory, computation, and applications.
+    \item Emphasis on integrating computation with statistical modeling.
+\end{itemize}
+\end{frame}
+
+% Slide 4: Counterfactual Causal Inference
+\begin{frame}{Counterfactual Causal Inference}
+\begin{itemize}
+    \item Allows causal inference using observational data.
+    \item Framework based on "potential outcomes" or "counterfactuals."
+    \item Example: Studying the effect of NYC’s "Vision Zero" traffic policy using observational data.
+\end{itemize}
+
+\[
+\text{Causal Effect: } Y(1) - Y(0)
+\]
+\begin{itemize}
+    \item \( Y(1) \): Outcome if treated.
+    \item \( Y(0) \): Outcome if untreated.
+    \item Challenge: Only one outcome is observed.
+\end{itemize}
+
+\begin{block}{Real-World Connection}
+NYC Open Data provides datasets on traffic accidents, enabling causal analysis of interventions like "Vision Zero."
+\end{block}
+\end{frame}
+
+% Slide 5: Bootstrapping and Simulation-Based Inference
+\begin{frame}{Bootstrapping and Simulation-Based Inference}
+\begin{itemize}
+    \item Introduced by Bradley Efron (1979).
+    \item Resampling technique to estimate sampling distributions without assumptions about data distribution.
+\end{itemize}
+
+\begin{exampleblock}{Algorithm:}
+\begin{enumerate}
+    \item Resample the dataset with replacement.
+    \item Compute the statistic of interest (e.g., mean).
+    \item Repeat \( n \) times to estimate variability.
+\end{enumerate}
+\end{exampleblock}
+
+\begin{block}{Example: NYC 311 Calls Data}
+Use bootstrapping to estimate variability in the average response time for complaints across boroughs.
+\end{block}
+\end{frame}
+
+% Slide 6: Overparameterized Models and Regularization
+\begin{frame}{Overparameterized Models and Regularization}
+\begin{itemize}
+    \item High-dimensional models with more parameters than data points.
+    \item Regularization prevents overfitting by adding penalties to the model:
+    \[
+    \text{LASSO: } \min \left( ||Y - X\beta||^2 + \lambda ||\beta||_1 \right)
+    \]
+\end{itemize}
+
+\begin{block}{Example}
+Neural networks for NYC Open Data crime prediction:
+\begin{itemize}
+    \item Regularization reduces noise and ensures generalizable predictions.
+\end{itemize}
+\end{block}
+\end{frame}
+
+% Slide 7: Bayesian Multilevel Models
+\begin{frame}{Bayesian Multilevel Models}
+\begin{itemize}
+    \item Models hierarchical data with varying parameters at different levels.
+    \item Example: Modeling housing prices across NYC boroughs.
+\end{itemize}
+
+\[
+y_{ij} = \beta_0 + \beta_1 X_{ij} + u_j + \epsilon_{ij}
+\]
+\begin{itemize}
+    \item \( u_j \): Random effect for borough \( j \).
+    \item \( \epsilon_{ij} \): Error term for observation \( i \) in borough \( j \).
+\end{itemize}
+
+\begin{block}{Advantage}
+Combines individual-level and group-level variability for improved estimates.
+\end{block}
+\end{frame}
+
+% Slide 8: Generic Computation Algorithms
+\begin{frame}{Generic Computation Algorithms}
+\begin{itemize}
+    \item Advances in algorithms like MCMC, EM, and variational inference.
+    \item Enabled complex models and large-scale Bayesian analysis.
+\end{itemize}
+
+\begin{block}{Connection to NYC Open Data}
+Use MCMC to model traffic flow patterns and predict congestion hotspots.
+\end{block}
+\end{frame}
+
+% Slide 9: Adaptive Decision Analysis
+\begin{frame}{Adaptive Decision Analysis}
+\begin{itemize}
+    \item Framework for making decisions during experiments.
+    \item Application: Stopping clinical trials early for ethical reasons.
+\end{itemize}
+
+\begin{block}{Real-World Example}
+In NYC public health studies, adaptive analysis helps evaluate the success of vaccination campaigns.
+\end{block}
+\end{frame}
+
+% Slide 10: Robust Inference
+\begin{frame}{Robust Inference}
+\begin{itemize}
+    \item Focuses on reliability under model misspecification.
+    \item Example: Median-based estimators for income disparity in NYC.
+\end{itemize}
+
+\begin{block}{Key Insight}
+Robust inference allows valid results even when data deviates from assumptions.
+\end{block}
+\end{frame}
+
+% Slide 11: Exploratory Data Analysis (EDA)
+\begin{frame}{Exploratory Data Analysis (EDA)}
+\begin{itemize}
+    \item Emphasizes visualization and insights over strict models.
+    \item Examples: Trends in NYC Open Data on crime or health disparities.
+\end{itemize}
+
+\includegraphics[width=\textwidth]{example-plot.png} % Add your visualization here.
+\end{frame}
+
+% Slide 12: Connection to NYC Open Data
+\begin{frame}{Connection to NYC Open Data}
+\begin{itemize}
+    \item Apply statistical methods to NYC datasets.
+    \item Example: Visualize and analyze health disparities using robust inference and EDA.
+\end{itemize}
+\end{frame}
+
+% Slide 13: Conclusions
+\begin{frame}{Conclusions and Future Directions}
+\begin{itemize}
+    \item These statistical ideas are foundational to modern data analysis.
+    \item Future: Integration of machine learning with causal inference.
+    \item Importance of robust and interpretable models for real-world applications.
+\end{itemize}
+\end{frame}
+
+% Slide 14: Questions
+\begin{frame}{Questions?}
+\begin{center}
+    Thank you! Any questions?
+\end{center}
+\end{frame}
+
+\end{document}
